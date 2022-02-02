@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:list_users_riverpod/new_group_page.dart';
 import 'package:list_users_riverpod/providers.dart';
+
+import 'new_group_page.dart';
 
 class UserSelector extends ConsumerWidget {
   const UserSelector({

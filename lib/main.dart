@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:list_users_riverpod/confirm_widget.dart';
-import 'package:list_users_riverpod/grid_items_builder.dart';
 import 'package:list_users_riverpod/models/user.dart';
 import 'package:list_users_riverpod/providers.dart';
-import 'package:list_users_riverpod/user_grid_tile.dart';
-import 'package:list_users_riverpod/user_selector.dart';
+
+
+import 'app/confirm/confirm_widget.dart';
+import 'app/new_group/user_selector.dart';
+import 'common widgets/grid_items_builder.dart';
+import 'common widgets/user_grid_tile.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,33 +44,28 @@ class MyHomePage extends HookConsumerWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListView(children: [
-              Row(children: [
-                Column(
-                  children: const [
-                    InkWell(
-                      child: Icon(Icons.arrow_back_ios_new),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextButton(
-                        onPressed: () {
-                          showUserSelector(context);
-                          //showMenu(context);
-                        },
+              GestureDetector(
+                onTap: () => showUserSelector(context),
+                child: Row(children: [
+                  Column(
+                    children: const [
+                      Icon(Icons.keyboard_arrow_down),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
                         child: Text('Groups',
                             style: TextStyle(
                                 color: Colors.blue[700],
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold)),
                       ),
-                    ),
-                  ],
-                ),
-              ]),
+                    ],
+                  ),
+                ]),
+              ),
               SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,

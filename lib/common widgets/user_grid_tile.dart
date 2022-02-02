@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:list_users_riverpod/models/user.dart';
-
+//TODO selection icon
 class UserGridTile extends StatelessWidget {
   const UserGridTile({Key? key, required this.user, this.onTap})
       : super(key: key);

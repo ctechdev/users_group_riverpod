@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:list_users_riverpod/confirm_content.dart';
-import 'package:list_users_riverpod/new_group_page.dart';
+
+import 'confirm_content.dart';
 
 class ConfirmWidget extends StatelessWidget {
   const ConfirmWidget({
