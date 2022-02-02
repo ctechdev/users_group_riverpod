@@ -26,11 +26,15 @@ final queryFilterProvider = StateProvider((ref) => '');
 final filteredUsersProvider = Provider<List<User>>((ref) {
   final query = ref.watch(queryFilterProvider);
   final users = ref.watch(userProvider).value;
-  var tempList = [...users!];
-  final resultFilter = tempList
-      .where(
-          (User user) => user.name!.toLowerCase().contains(query.toLowerCase()))
-      .toList();
+  if (users != null) {
+    var tempList = [...users];
 
-  return resultFilter;
+    final resultFilter = tempList
+        .where((User user) =>
+            user.name!.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    return resultFilter;
+  }
+  return [];
 });

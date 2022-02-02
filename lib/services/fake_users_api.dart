@@ -7,7 +7,7 @@ class UsersApi {
   Future<List<User>> getUsers() async {
     var jsonText = await rootBundle.loadString('assets/users.json');
     final users = <User>[];
-
+  
     final data = json.decode(jsonText) as List<dynamic>?;
     if (data == null) return [];
     for (final user in data) {

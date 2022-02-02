@@ -126,10 +126,7 @@ class MyUsers extends StateNotifier<List<User>> {
   MyUsers([List<User>? initialUsers]) : super(initialUsers ?? []);
 
   void add(User selectedUser) {
-    state = [
-      ...state,
-      selectedUser
-    ];
+    state = [...state, selectedUser];
   }
 
   void remove(User toRemove) {
@@ -138,13 +135,12 @@ class MyUsers extends StateNotifier<List<User>> {
 }
 
 final usersListProvider = StateNotifierProvider<MyUsers, List<User>>((ref) {
-  return MyUsers(const [    
+  return MyUsers([
+    User(id: 21, name: 'Mario Tozzi', username: '@tozzimario'),
+    User(id: 22, name: 'Franco Franchi', username: '@francofranchi'),
+    User(id: 23, name: 'Alfio Stanco', username: '@alfiostanco'),
+    User(id: 24, name: 'Gino Spada', username: '@ginospada'),
+    User(id: 25, name: 'Cesare Bocca', username: '@cesarebocca'),
   ]);
 });
-
-// final FutureProviderFamily<int, String> docCountProvider =
-//     FutureProvider.family<int, String>(
-//         (FutureProviderRef<int> ref, String collectionPath) async {
-//   return FirestoreService.docCount(collectionPath: collectionPath);
-// });
 
