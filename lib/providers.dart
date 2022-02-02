@@ -2,7 +2,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:list_users_riverpod/models/user.dart';
 import 'package:list_users_riverpod/services/fake_users_api.dart';
 
-final userProvider = FutureProvider((FutureProviderRef<List<User>> ref) async {
+final userProvider = FutureProvider.autoDispose((ref) async {
   return UsersApi().getUsers();
 });
 
@@ -21,9 +21,9 @@ class Counter extends StateNotifier<int> {
   }
 }
 
-final queryFilterProvider = StateProvider((ref) => '');
+final queryFilterProvider = StateProvider.autoDispose((ref) => '');
 
-final filteredUsersProvider = Provider<List<User>>((ref) {
+final filteredUsersProvider = Provider.autoDispose<List<User>>((ref) {
   final query = ref.watch(queryFilterProvider);
   final users = ref.watch(userProvider).value;
   if (users != null) {

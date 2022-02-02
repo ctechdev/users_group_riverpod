@@ -136,11 +136,7 @@ class MyUsers extends StateNotifier<List<User>> {
 
 final usersListProvider = StateNotifierProvider<MyUsers, List<User>>((ref) {
   return MyUsers([
-    User(id: 21, name: 'Mario Tozzi', username: '@tozzimario'),
-    User(id: 22, name: 'Franco Franchi', username: '@francofranchi'),
-    User(id: 23, name: 'Alfio Stanco', username: '@alfiostanco'),
-    User(id: 24, name: 'Gino Spada', username: '@ginospada'),
-    User(id: 25, name: 'Cesare Bocca', username: '@cesarebocca'),
+    
   ]);
 });
 
