@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:list_users_riverpod/models/user.dart';
-import 'package:list_users_riverpod/providers.dart';
 
 
 import 'app/confirm/confirm_widget.dart';

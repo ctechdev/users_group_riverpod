@@ -110,7 +110,7 @@ class NewGroupState extends ConsumerState<NewGroup> {
                         padding: const EdgeInsets.all(8.0),
                         child: SizedBox(
                           width: 200,
-                          child: Text('Select members already in Incloodo',
+                          child: Text('Select members already on platform',
                               style: TextStyle(
                                   color: Colors.blue[700],
                                   fontSize: 20,
