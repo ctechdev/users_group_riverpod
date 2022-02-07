@@ -8,7 +8,7 @@ import 'package:list_users_riverpod/common%20widgets/user_grid_tile.dart';
 import 'package:list_users_riverpod/models/user.dart';
 import 'package:list_users_riverpod/providers.dart';
 
-//TODO problema overflow su bottom sheet dopo aggiornamento 
+//TODO problema overflow su bottom sheet dopo aggiornamento
 class NewGroup extends ConsumerStatefulWidget {
   const NewGroup({Key? key}) : super(key: key);
 
@@ -142,8 +142,9 @@ class NewGroupState extends ConsumerState<NewGroup> {
                         child: CupertinoTextField(
                           controller: textEditingController,
                           onChanged: (value) => {
-                            if(value.length ==1 ){toggleVisibility()},
-                            ref.read(queryFilterProvider.notifier).state = value,
+                            if (value.length == 1) {toggleVisibility()},
+                            ref.read(queryFilterProvider.notifier).state =
+                                value,
                             ref.refresh(filteredUsersProvider)
                           },
                           keyboardType: TextInputType.text,
@@ -179,8 +180,8 @@ class NewGroupState extends ConsumerState<NewGroup> {
                       itemBuilder: (BuildContext context, User user) =>
                           UserGridTile(
                             user: user,
-                            onTap: () =>
-                                ref.read(usersListProvider.notifier).add(user),
+                            onTap: () => {},
+                            //() => ref.read(usersListProvider.notifier).add(user),
                           ))),
             ]),
           ),

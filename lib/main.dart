@@ -69,6 +69,7 @@ class MyHomePage extends HookConsumerWidget {
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   child: GridBuilder(
+                    //TODO creare lista con grid tile non selezionabili
                     data: selectedUsers,
                     itemBuilder: (BuildContext context, User user) =>
                         UserGridTile(
